@@ -1,0 +1,82 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+h1.text-center {
+    font-size: 2em;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+h4 {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+
+.app-user-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #f1f1f1;
+}
+
+div *ngIf {
+    font-size: 1.2em;
+    color: #999;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: calc(100% - 22px);
+    margin-bottom: 10px;
+}
+
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}

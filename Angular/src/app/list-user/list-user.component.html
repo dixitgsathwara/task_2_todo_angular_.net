@@ -1,0 +1,9 @@
+<div class="containerMain">
+    <div *ngIf="this.users.length===0; else elseBlock">No User to display</div>
+    <ng-template #elseBlock>
+        <div class="container" *ngFor="let user of users; index as i">
+            <app-user-list [user]="user" [i]="i" (userDelete)="deleteUser($event)" (userCheckbox)="toggleUser($event)">
+            </app-user-list>
+        </div>
+    </ng-template>
+</div>
