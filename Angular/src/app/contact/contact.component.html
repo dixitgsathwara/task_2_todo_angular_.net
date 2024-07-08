@@ -1,0 +1,59 @@
+<div class="container-1" *ngIf="!isEditing" >
+  <h2>Add New Contact</h2>
+  <form (ngSubmit)="addContact()" #ContactForm="ngForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="newContact.name" name="name" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" [(ngModel)]="newContact.email" name="email" required>
+    <br>
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" [(ngModel)]="newContact.phone" name="phone" required>
+    <br>
+    <button type="submit" [disabled]="!ContactForm.valid">Add Contact</button>
+  </form>
+</div>
+
+<div class="container-3" *ngIf="isEditing">
+  <div>
+    <h2>Edit Contact</h2>
+    <form (ngSubmit)="updateContact()">
+      <label for="edit-name">Name:</label>
+      <input type="text" id="edit-name" [(ngModel)]="editedContact.name" name="edit-name" required>
+      <br>
+      <label for="edit-email">Email:</label>
+      <input type="email" id="edit-email" [(ngModel)]="editedContact.email" name="edit-email" required>
+      <br>
+      <label for="edit-phone">Phone:</label>
+      <input type="text" id="edit-phone" [(ngModel)]="editedContact.phone" name="edit-phone" required>
+      <br>
+      <button type="submit">Update Contact</button>
+      <button class="delete-btn" type="button" (click)="cancelEdit()">Cancel</button>
+    </form>
+  </div>
+</div>
+
+<div class="container-2">
+  <h2>Your Contacts</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts">
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.email }}</td>
+        <td>{{ contact.phone }}</td>
+        <td>
+          <button class="edit-btn" (click)="editContact(contact)">Edit</button>
+          <button class="delete-btn" (click)="deleteContact(contact.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
